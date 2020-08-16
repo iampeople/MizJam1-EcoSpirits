@@ -1,0 +1,26 @@
+[gd_scene format=2]
+
+[node name="Player" type="KinematicBody2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RestartMessage" type="Label" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="CanvasLayer/RestartMessage"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Death" type="Particles2D" parent="."]
