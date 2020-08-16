@@ -7,6 +7,9 @@ https://atom.io - Editor
 https://notepad-plus-plus.org/ - Text Editor
 https://devassets.com/assets/2d-mega-pack/ - Art Assets
 https://desktop.github.com/ - version control
+https://www.getpaint.net/download.html#download - Art Editor
+https://github.com/Kavex/GameDev-Resources#pixel-editor - resources
+
 
 #Copyright
 https://en.wikipedia.org/wiki/Copyright_notice
