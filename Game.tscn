@@ -6,7 +6,8 @@
 [node name="Game" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 10.7519, 210.207 )
+position = Vector2( 303.685, 252.399 )
+z_index = 1
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 24.3146, 260.427 )
