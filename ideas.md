@@ -73,16 +73,18 @@ Walk back through the previous levels removing all industrial polution and plant
 1.4 - Tree dude - narrative/story stuff -> gives pack of playing cards (good luck) -> 
 1.5 - Objects merge becomes the Gambit (ship 1) -> Can leave the forest
 
-##Fight
+##Fight-1
 1.6 - Bad guys burning the forest, Trees turning into burnt stumps, pipes/industrial growing, 
 1.6.1 - Progress bar (tres/burnt trees)
 1.7 - Fight the bad guys - shoot cards 
 1.8 - follow spring to river
 1.9 - finding more cards to power the ship, forest ends
 
-##Fight
+##Fight-2
 2 - River - Bad guys poluting river w/oil barrels, Ducks dying, Duck eggs thrown - area affect
 
+##Fight-3
+3 - Air - City smog
 
 
 
@@ -91,6 +93,12 @@ Walk back through the previous levels removing all industrial polution and plant
 
 
 
+
+#Fun Ideas
+
+##Character
+- idle for too long, sleep
+- whip made from vines
 
 
 
