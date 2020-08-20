@@ -30,3 +30,10 @@ GIMP not exporting transparency
 
 ##Solution
 Export as 8bpc RBGA (not 8bpc RGB)
+
+
+##Problem
+GIMP - Need to add a border around something quick
+
+##Solution
+Magic select tool -> choose object -> Select-Grow-1px -> Bucket tool

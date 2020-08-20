@@ -99,8 +99,8 @@ Walk back through the previous levels removing all industrial polution and plant
 ##Character
 - idle for too long, sleep
 - whip made from vines
-
-
+- character gets bigger with every level (stronger but less dextrous?)
+- Bow with stamina bar (change arrow distance or power)
 
 
 
