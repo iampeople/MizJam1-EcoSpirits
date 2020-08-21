@@ -6,7 +6,7 @@
 [x] Make Restart
 [x] Make Quit
 
-[] Make the enemies ignore the player outside range
+[x] Make the enemies ignore the player outside range
 
 
 [] Set Trees on fire

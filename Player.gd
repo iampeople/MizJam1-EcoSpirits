@@ -13,6 +13,7 @@ var dead = false
 func _ready():
 	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	get_tree().call_group("need_player_ref", "set_player", self)
+	$Sprite/CanvasLayer/RestartMessage.hide()
 
 func _physics_process(delta):
 	var move_vec = Vector2()
