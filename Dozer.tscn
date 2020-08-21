@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Enemy_Dozer.png" type="Texture" id=1]
+[ext_resource path="res://Car.gd" type="Script" id=2]
+
+[node name="Dozer" type="Node2D"]
+
+[node name="Car" type="Sprite" parent="." groups=[
+"need_player_ref",
+]]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 32, 0, 16, 48 )
+script = ExtResource( 2 )
+
+[node name="Gun" type="Sprite" parent="."]

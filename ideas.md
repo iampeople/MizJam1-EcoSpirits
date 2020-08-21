@@ -102,6 +102,10 @@ Walk back through the previous levels removing all industrial polution and plant
 - character gets bigger with every level (stronger but less dextrous?)
 - Bow with stamina bar (change arrow distance or power)
 
+##Bad Guys
+- Fire spreads (like automata or simple decay)
+
+
 
 
 

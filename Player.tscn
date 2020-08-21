@@ -48,6 +48,24 @@ texture = ExtResource( 1 )
 hframes = 6
 frame = 4
 
+[node name="CanvasLayer" type="CanvasLayer" parent="Sprite"]
+
+[node name="RestartMessage" type="Label" parent="Sprite/CanvasLayer"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -85.0
+margin_top = -21.0
+margin_right = 85.0
+margin_bottom = 21.0
+text = "On a long enough timeline
+Death takes us all"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
@@ -56,24 +74,5 @@ anims/idle = SubResource( 2 )
 anims/walk = SubResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="RestartMessage" type="Label" parent="CanvasLayer"]
-margin_right = 40.0
-margin_bottom = 14.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Panel" type="Panel" parent="CanvasLayer/RestartMessage"]
-light_mask = 0
-margin_left = 12.4249
-margin_top = -57.4906
-margin_right = 52.4249
-margin_bottom = -17.4906
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Death" type="Particles2D" parent="."]
