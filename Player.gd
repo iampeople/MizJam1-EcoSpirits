@@ -15,7 +15,7 @@ func _ready():
 	get_tree().call_group("need_player_ref", "set_player", self)
 	$Sprite/CanvasLayer/RestartMessage.hide()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var move_vec = Vector2()
 	if !dead:
 		if Input.is_action_pressed("move_left"):
@@ -28,7 +28,7 @@ func _physics_process(delta):
 			move_vec.y -= 1
 		
 	velo += move_vec * move_speed - drag * velo
-	move_and_slide(velo, Vector2.UP)
+	var _ignore=move_and_slide(velo, Vector2.UP)
 	
 	if move_vec == Vector2():
 		play_anim("idle")
@@ -40,13 +40,13 @@ func _physics_process(delta):
 	elif move_vec.x < 0.0 and facing_right:
 		flip()
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_pressed("exit"):
 		get_tree().quit()
 	
 	if dead and Input.is_action_pressed("restart"):
 		get_tree().call_group("enemies","queue_free")
-		get_tree().reload_current_scene()
+		var _ignore=get_tree().reload_current_scene()
 
 func flip():
 	$Sprite.flip_h = !$Sprite.flip_h
