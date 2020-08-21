@@ -44,6 +44,7 @@ func _process(delta):
 		get_tree().quit()
 	
 	if dead and Input.is_action_pressed("restart"):
+		get_tree().call_group("enemies","queue_free")
 		get_tree().reload_current_scene()
 
 func flip():

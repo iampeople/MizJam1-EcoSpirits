@@ -37,3 +37,15 @@ GIMP - Need to add a border around something quick
 
 ##Solution
 Magic select tool -> choose object -> Select-Grow-1px -> Bucket tool
+
+
+##Problem
+Godot - Bullets were still there after restarting (hidden but there and would kill the player again)
+
+##Solution
+In Bullet and Dozer add the enemies group:
+func _ready():
+	add_to_group("enemies")
+
+In Player as part of restarting:
+	get_tree().call_group("enemies","queue_free")

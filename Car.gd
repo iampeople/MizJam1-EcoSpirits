@@ -30,3 +30,7 @@ func fire():
 
 func set_player(p):
 	player = p
+
+func _ready():
+	add_to_group("enemies")
+
