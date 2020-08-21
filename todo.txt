@@ -1,0 +1,26 @@
+[x] Make Level
+[x] Make Character
+[x] Make Enemy
+[x] Make Bullet
+[x] Make Bullet Hit Character
+[x] Make Restart
+[x] Make Quit
+
+[] Make the enemies ignore the player outside range
+
+
+[] Set Trees on fire
+[] Shorten shooting distance 
+[] Adjust map so edges don't show initially
+[] Make camera follow player
+
+[] Make the other dozers that attack the trees
+
+[] Make the stuff to find in the forest (arrow bow or forest spirit or whatever)
+[] Make it hard to leave the forest w/o the stuff
+[] Limit the number of arrows/bullets (just make stuff harder)
+
+
+[] Make Tutorial Level
+[] Tutorial - Track buttons clicked (WASD-Esc-R)
+[] Story - Dialog boxes, reveal 

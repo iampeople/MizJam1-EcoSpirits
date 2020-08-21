@@ -10,8 +10,9 @@ var rang = 500
 var bullet = preload("res://Bullet.tscn")
 
 func _physics_process(delta):
-	if player == null:
+	if player == null or global_position.distance_to(player.global_position) > rang:
 		return
+	
 	var dir_to_player = player.global_position - global_position
 	rotation = dir_to_player.angle()
 	fire_time += delta
