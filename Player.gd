@@ -14,6 +14,7 @@ func _ready():
 	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	get_tree().call_group("need_player_ref", "set_player", self)
 	$Sprite/CanvasLayer/RestartMessage.hide()
+	$Sprite/CanvasLayer/RestartPanel.hide()
 
 func _physics_process(_delta):
 	var move_vec = Vector2()
@@ -60,3 +61,4 @@ func play_anim(anim):
 func die():
 	dead = true
 	$Sprite/CanvasLayer/RestartMessage.show()
+	$Sprite/CanvasLayer/RestartPanel.show()
