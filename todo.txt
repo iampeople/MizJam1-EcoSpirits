@@ -5,22 +5,29 @@
 [x] Make Bullet Hit Character
 [x] Make Restart
 [x] Make Quit
-
 [x] Make the enemies ignore the player outside range
+[x] Make camera follow player
+[x] Make death animation
 
 
-[] Set Trees on fire
-[] Shorten shooting distance 
-[] Adjust map so edges don't show initially
-[] Make camera follow player
-
-[] Make the other dozers that attack the trees
+[] Make the restart message appear after player death animation ends
 
 [] Make the stuff to find in the forest (arrow bow or forest spirit or whatever)
 [] Make it hard to leave the forest w/o the stuff
 [] Limit the number of arrows/bullets (just make stuff harder)
 
 
+[] Set Trees on fire
+[] Shorten shooting distance / move initial dozer location
+[] Make dozer move / follow (slow)
+[] Add screen rumble on dozer move
+[] Adjust map so edges don't show initially
+
+[] Make the other dozers that attack the trees
+
+
 [] Make Tutorial Level
 [] Tutorial - Track buttons clicked (WASD-Esc-R)
 [] Story - Dialog boxes, reveal 
+
+[] Title Scene

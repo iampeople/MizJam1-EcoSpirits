@@ -5,7 +5,7 @@ var player = null
 var rot_speed = 0.1
 var fire_rate = 1.0
 var fire_time = 0.0
-var rang = 500
+var rang = 400
 
 var bullet = preload("res://Bullet.tscn")
 
@@ -31,6 +31,11 @@ func fire():
 
 func set_player(p):
 	player = p
+
+func release_player(p):
+	if player == p:
+		player = null
+	
 
 func _ready():
 	add_to_group("enemies")

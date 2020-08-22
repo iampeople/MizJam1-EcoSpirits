@@ -101,6 +101,7 @@ Walk back through the previous levels removing all industrial polution and plant
 - whip made from vines
 - character gets bigger with every level (stronger but less dextrous?)
 - Bow with stamina bar (change arrow distance or power)
+- Pray to heal
 
 ##Bad Guys
 - Fire spreads (like automata or simple decay)
