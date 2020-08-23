@@ -17,6 +17,7 @@ func _ready():
 	get_tree().call_group("need_player_ref", "set_player", self)
 	$Sprite/CanvasLayer/RestartPanel.hide()
 	$Sprite.scale = Vector2(1,1)
+	$Sprite.rotation = 0
 
 func _physics_process(_delta):
 	var move_vec = Vector2()
