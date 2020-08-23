@@ -4,10 +4,12 @@
 [ext_resource path="res://Car.gd" type="Script" id=2]
 
 [node name="Dozer" type="Node2D"]
+rotation = -1.56141
 
 [node name="Car" type="Sprite" parent="." groups=[
 "need_player_ref",
 ]]
+rotation = 4.70406
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 32, 0, 16, 48 )

@@ -8,14 +8,12 @@
 [x] Make the enemies ignore the player outside range
 [x] Make camera follow player
 [x] Make death animation
-
-
-[] Make the restart message appear after player death animation ends
+[x] Make the restart message appear after player death animation ends (yield command)
+[x] Make the dozer face the right way
 
 [] Make the stuff to find in the forest (arrow bow or forest spirit or whatever)
 [] Make it hard to leave the forest w/o the stuff
 [] Limit the number of arrows/bullets (just make stuff harder)
-
 
 [] Set Trees on fire
 [] Shorten shooting distance / move initial dozer location
@@ -24,7 +22,6 @@
 [] Adjust map so edges don't show initially
 
 [] Make the other dozers that attack the trees
-
 
 [] Make Tutorial Level
 [] Tutorial - Track buttons clicked (WASD-Esc-R)
