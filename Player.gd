@@ -11,6 +11,7 @@ var facing_right = true
 onready var anim_player = $AnimationPlayer
 
 var dead = false
+var have_bow = false
 
 func _ready():
 	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
@@ -18,6 +19,7 @@ func _ready():
 	$Sprite/CanvasLayer/RestartPanel.hide()
 	$Sprite.scale = Vector2(1,1)
 	$Sprite.rotation = 0
+	$Sprite/Bow.hide()
 
 func _physics_process(_delta):
 	var move_vec = Vector2()
@@ -39,6 +41,8 @@ func _physics_process(_delta):
 			_play_anim("idle")
 		else:
 			_play_anim("walk")
+		if have_bow == true:
+			$Sprite/Bow.show()
 	
 	if move_vec.x > 0.0 and !facing_right:
 		flip()
@@ -55,6 +59,7 @@ func _process(_delta):
 
 func flip():
 	$Sprite.flip_h = !$Sprite.flip_h
+	$Sprite/Bow.flip_h = !$Sprite/Bow.flip_h
 	facing_right = !facing_right
 	
 func _play_anim(anim):
@@ -71,3 +76,6 @@ func die():
 	yield($AnimationPlayer, 'animation_finished')
 	$Sprite/CanvasLayer/RestartPanel.show()
 	
+func give(loot):
+	if loot.name == "Bow":
+		have_bow = true
