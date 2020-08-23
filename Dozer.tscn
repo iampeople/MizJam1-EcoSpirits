@@ -15,4 +15,13 @@ region_enabled = true
 region_rect = Rect2( 32, 0, 16, 48 )
 script = ExtResource( 2 )
 
+[node name="TextLabel" type="Label" parent="Car"]
+margin_left = -66.0
+margin_top = -51.0
+margin_right = 68.0
+margin_bottom = -37.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Gun" type="Sprite" parent="."]

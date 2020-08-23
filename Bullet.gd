@@ -14,9 +14,9 @@ func _physics_process(delta):
 func _ready():
 	add_to_group("enemies")
 
-func set_player(p):
+func set_player(_p):
 	return
 	
-func release_player(p):
+func release_player(_p):
 	queue_free()
 	

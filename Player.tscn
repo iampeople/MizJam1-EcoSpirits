@@ -130,9 +130,7 @@ anims/dead = SubResource( 6 )
 anims/idle = SubResource( 2 )
 anims/walk = SubResource( 3 )
 
-[node name="Death" type="Particles2D" parent="."]
-
-[node name="Camera2D2" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( 20, 20 )
 current = true
 drag_margin_h_enabled = true

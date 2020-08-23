@@ -1,12 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://MapTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Dozer.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Game.gd" type="Script" id=4]
 
 [node name="Game" type="Node2D"]
-script = ExtResource( 4 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 303.685, 252.399 )
