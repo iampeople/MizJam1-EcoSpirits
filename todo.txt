@@ -10,14 +10,19 @@
 [x] Make death animation
 [x] Make the restart message appear after player death animation ends (yield command)
 [x] Make the dozer face the right way
+[x] Make the fire explode
 
-[] Make the fire explode
+[] Make the dozer telegraph before shooting
+[] Make the dozer move
+[] Make the dozer activate/idle (eyes glow)
 
 [] Make the stuff to find in the forest (arrow bow or forest spirit or whatever)
 [] Make it hard to leave the forest w/o the stuff
 [] Limit the number of arrows/bullets (just make stuff harder)
 
 [] Set Trees on fire
+[] Lose condition of forest burning down
+
 [] Shorten shooting distance / move initial dozer location
 [] Make dozer move / follow (slow)
 [] Add screen rumble on dozer move
@@ -30,3 +35,4 @@
 [] Story - Dialog boxes, reveal 
 
 [] Title Scene
+[] Win Scene

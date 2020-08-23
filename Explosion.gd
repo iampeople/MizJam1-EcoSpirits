@@ -5,7 +5,7 @@ func _ready():
 	$Sprite.scale = Vector2(1,1)
 	$Sprite.rotation = 0
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	$AnimationPlayer.play("explode")
 	yield($AnimationPlayer, 'animation_finished')
 	queue_free()

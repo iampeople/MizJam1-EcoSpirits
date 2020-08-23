@@ -1,7 +1,31 @@
-[gd_resource type="TileSet" load_steps=3 format=2]
+[gd_resource type="TileSet" load_steps=11 format=2]
 
 [ext_resource path="res://colored_packed.png" type="Texture" id=1]
 [ext_resource path="res://Lake2.png" type="Texture" id=2]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 6.82349, 13.0211, 3.94168, 13.0211, 3.08493, 11.775, 7.91389, 1.02662, 12.9765, 11.6971, 11.6524, 13.0211, 8.92642, 13.0211, 8.84853, 14.0337, 8.84853, 14.8125, 6.97926, 14.7346 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 12.9183, 11.9089, 12.1332, 12.8062, 8.88071, 13.1427, 8.88071, 14.825, 6.97404, 14.7128, 6.86189, 12.9183, 3.16071, 12.1332, 8.20776, 1.02974 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 11.723, 11.7968, 9.03125, 11.9089, 8.9191, 14.825, 7.12459, 14.7128, 7.23675, 12.0211, 3.87205, 11.6846, 7.68537, 0.917587 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 8.02216, 11.8529, 3.90976, 14.8437, 0.918915, 11.5725, 4.564, 3.7215 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 14.7516, 10.8247, 11.3869, 13.9091, 9.05027, 11.9463, 11.7607, 1.01105 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 10.528, 0.917583, 12.6777, 12.881, 8.19141, 15.1241, 3.23782, 12.9744, 5.85481, 0.82412 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 2.09858, 1.29144, 13.5012, 1.19798, 13.9685, 9.04893, 8.36065, 14.8437, 2.19204, 8.86201 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+points = PoolVector2Array( 6.00637, 2.413, 7.87565, 0.917583, 10.6796, 3.62803, 13.1096, 3.90842, 12.7358, 9.79665, 10.0253, 9.79665, 9.83839, 14.6568, 6.1933, 14.9372, 3.10899, 12.6006, 2.92207, 6.89927 )
 
 [resource]
 0/name = "colored_packed.png 3"
@@ -40,7 +64,55 @@
 1/autotile/z_index_map = [  ]
 1/occluder_offset = Vector2( 0, 0 )
 1/navigation_offset = Vector2( 0, 0 )
-1/shapes = [  ]
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 3, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 3, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 4, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 5, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 6, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 8 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 1/z_index = 0
 3/name = "Lake"
 3/texture = ExtResource( 2 )
