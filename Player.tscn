@@ -85,6 +85,7 @@ tracks/0/keys = {
 }
 
 [node name="Player" type="KinematicBody2D"]
+collision_mask = 4
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -95,10 +96,8 @@ frame = 5
 [node name="CanvasLayer" type="CanvasLayer" parent="Sprite"]
 
 [node name="RestartPanel" type="Panel" parent="Sprite/CanvasLayer"]
-margin_left = 422.055
-margin_top = 276.081
-margin_right = 622.055
-margin_bottom = 331.081
+margin_right = 200.0
+margin_bottom = 55.0
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -117,6 +116,14 @@ margin_bottom = 23.4188
 text = "On a long enough timeline
 Death takes us all
 R to show death what's what"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="debug" type="Label" parent="Sprite/CanvasLayer"]
+visible = false
+margin_right = 40.0
+margin_bottom = 14.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -1,11 +1,12 @@
-extends Sprite
+extends Node2D
 
 var player = null
 
 var rot_speed = .5
-var fire_rate = 1.0
+var fire_rate = 1.5
 var fire_time = 0.0
 var rang = 400
+var hp = 5
 
 var bullet = preload("res://Bullet.tscn")
 
@@ -17,7 +18,7 @@ func _physics_process(delta):
 	
 	#$TextLabel.text = "Lerp: " + str(lerp_angle(global_position.angle(),dir_to_player.angle(),rot_speed))+"\n rot_spead: "+str(rot_speed)+"\n dir_to_player: "+ str(dir_to_player.angle())+"\n global_position:"+str(global_position.angle())+"\n delta:"+str(delta)
 	#rotation = lerp_angle(global_position.angle(),dir_to_player.angle(),rot_speed*delta)
-	rotation = dir_to_player.angle()
+	$Car.rotation = dir_to_player.angle()
 	
 	
 	fire_time += delta
@@ -43,4 +44,12 @@ func release_player(p):
 	
 func _ready():
 	add_to_group("enemies")
-
+	
+	
+func hit(power):
+	#$Car/TextLabel.text = "power: "+str(power)
+	hp -= power
+	$TextLabel.text = "HP: "+str(hp)
+	if hp <= 0:
+		queue_free()
+		

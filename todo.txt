@@ -14,8 +14,17 @@
 [x] Shorten shooting distance
 [x] Make the stuff to find in the forest (arrow bow)
 [x] Make it hard to leave the forest w/o the stuff
+[x] Put the start panel where the player died
+[x] Make bow shoot
+[x] Can't move while pulling bow string
 
-[] Make bow shoot
+
+
+[] Make bow string indicator (power)
+[] Make the bow shake
+
+
+[] Add flowers that can be pickups for arrows
 [] Make arrows kill 
 [] Limit the number of arrows/bullets (just make stuff harder)
 

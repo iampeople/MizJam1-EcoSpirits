@@ -5,13 +5,16 @@ signal dead
 const move_speed = 40
 var velo = Vector2()
 var drag = 0.5
-
 var facing_right = true
-
 onready var anim_player = $AnimationPlayer
-
 var dead = false
+
+#Bow and Arrow
 var have_bow = false
+var fire_rate = 1.0
+var fire_time = 0.0
+var arrow = preload("res://Arrow.tscn")
+
 
 func _ready():
 	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
@@ -21,18 +24,28 @@ func _ready():
 	$Sprite.rotation = 0
 	$Sprite/Bow.hide()
 
-func _physics_process(_delta):
+func _physics_process(delta):
+	#set ongoing counters
 	var move_vec = Vector2()
+	if have_bow == true:
+		fire_time += delta
+	
+	#player actions
 	if !dead:
-		if Input.is_action_pressed("move_left"):
-			move_vec.x -= 1
-		if Input.is_action_pressed("move_right"):
-			move_vec.x += 1
-		if Input.is_action_pressed("move_down"):
-			move_vec.y += 1
-		if Input.is_action_pressed("move_up"):
-			move_vec.y -= 1
-		
+		if have_bow == true and Input.is_action_pressed("click"):
+				if fire_time > fire_rate:
+					fire_time = 0
+					fire()
+		else:
+			if Input.is_action_pressed("move_left"):
+				move_vec.x -= 1
+			if Input.is_action_pressed("move_right"):
+				move_vec.x += 1
+			if Input.is_action_pressed("move_down"):
+				move_vec.y += 1
+			if Input.is_action_pressed("move_up"):
+				move_vec.y -= 1
+				
 	velo += move_vec * move_speed - drag * velo
 	var _ignore=move_and_slide(velo, Vector2.UP)
 	
@@ -73,9 +86,33 @@ func die():
 	get_tree().call_group("need_player_ref", "release_player", self)
 	$CollisionShape2D.disabled = true
 	$AnimationPlayer.play("dead")
+	$Sprite/CanvasLayer/RestartPanel.rect_position.x=global_position.x
+	$Sprite/CanvasLayer/RestartPanel.rect_position.y=global_position.y
 	yield($AnimationPlayer, 'animation_finished')
 	$Sprite/CanvasLayer/RestartPanel.show()
 	
 func give(loot):
 	if loot.name == "Bow":
 		have_bow = true
+		
+func fire():
+	var arrow_inst = arrow.instance()
+	get_tree().get_root().add_child(arrow_inst)
+	arrow_inst.global_position = global_position
+	var dir_to_fire = global_position.direction_to(get_global_mouse_position())
+	arrow_inst.move_dir = dir_to_fire
+	arrow_inst.rotation = dir_to_fire.angle()
+	#$Sprite/CanvasLayer/debug.text = "player: ("
+	#$Sprite/CanvasLayer/debug.text += str(global_position.x)
+	#$Sprite/CanvasLayer/debug.text += ", " 
+	#$Sprite/CanvasLayer/debug.text += str(global_position.y) 
+	#$Sprite/CanvasLayer/debug.text += ")\n"+ "mouse: ("
+	#$Sprite/CanvasLayer/debug.text += str(get_global_mouse_position().x)
+	#$Sprite/CanvasLayer/debug.text += ", "
+	#$Sprite/CanvasLayer/debug.text += str(get_global_mouse_position().y)
+	#$Sprite/CanvasLayer/debug.text += ")\n"
+	#$Sprite/CanvasLayer/debug.text += "arrow: ("
+	#$Sprite/CanvasLayer/debug.text += str(dir_to_fire.x)
+	#$Sprite/CanvasLayer/debug.text += ", "
+	#$Sprite/CanvasLayer/debug.text += str(dir_to_fire.y)
+	#$Sprite/CanvasLayer/debug.text += ")\n"
