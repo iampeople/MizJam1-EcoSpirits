@@ -9,17 +9,23 @@ var facing_right = true
 onready var anim_player = $AnimationPlayer
 var dead = false
 
+
+
 #Bow and Arrow
 var have_bow = false
 var fire_rate = 1.0
 var fire_time = 0.0
 var arrow = preload("res://Arrow.tscn")
 
+#Fire
+var have_fire=false
+
 
 func _ready():
 	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	get_tree().call_group("need_player_ref", "set_player", self)
-	$Sprite/CanvasLayer/RestartPanel.hide()
+	$RestartPanel.hide()
+	$WinPanel.hide()
 	$Sprite.scale = Vector2(1,1)
 	$Sprite.rotation = 0
 	$Sprite/Bow.hide()
@@ -31,7 +37,7 @@ func _physics_process(delta):
 		fire_time += delta
 	
 	#player actions
-	if !dead:
+	if !dead and !have_fire:
 		if have_bow == true and Input.is_action_pressed("click"):
 				if fire_time > fire_rate:
 					fire_time = 0
@@ -66,7 +72,7 @@ func _process(_delta):
 	if Input.is_action_pressed("exit"):
 		get_tree().quit()
 	
-	if dead and Input.is_action_pressed("restart"):
+	if (dead or have_fire) and Input.is_action_pressed("restart"):
 		get_tree().call_group("enemies","queue_free")
 		var _ignore=get_tree().reload_current_scene()
 
@@ -86,15 +92,24 @@ func die():
 	get_tree().call_group("need_player_ref", "release_player", self)
 	$CollisionShape2D.disabled = true
 	$AnimationPlayer.play("dead")
-	$Sprite/CanvasLayer/RestartPanel.rect_position.x=global_position.x
-	$Sprite/CanvasLayer/RestartPanel.rect_position.y=global_position.y
-	yield($AnimationPlayer, 'animation_finished')
-	$Sprite/CanvasLayer/RestartPanel.show()
+	#$Sprite/CanvasLayer/RestartPanel.rect_position.x=to_local(global_position).x
+	#$Sprite/CanvasLayer/RestartPanel.rect_position.y=to_local(global_position).y
+	#yield($AnimationPlayer, 'animation_finished')
+	$RestartPanel.show()
 	
 func give(loot):
 	if loot.name == "Bow":
 		have_bow = true
-		
+	
+	if loot.name == "Fire":
+		have_fire = true
+		win()
+	
+	
+func win():
+	$WinPanel.show()
+	get_tree().call_group("need_player_ref", "release_player", self)
+	
 func fire():
 	var arrow_inst = arrow.instance()
 	get_tree().get_root().add_child(arrow_inst)

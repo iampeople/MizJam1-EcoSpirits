@@ -4,11 +4,6 @@
 [ext_resource path="res://Player.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Bow.png" type="Texture" id=3]
 
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.278431, 0.176471, 0.235294, 0.796078 )
-
-[sub_resource type="ShaderMaterial" id=2]
-
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 8.09485, 8.06731 )
 
@@ -84,6 +79,11 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 0 ]
 }
 
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.278431, 0.176471, 0.235294, 0.796078 )
+
+[sub_resource type="ShaderMaterial" id=2]
+
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 4
 script = ExtResource( 2 )
@@ -94,31 +94,6 @@ hframes = 6
 frame = 5
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Sprite"]
-
-[node name="RestartPanel" type="Panel" parent="Sprite/CanvasLayer"]
-margin_right = 200.0
-margin_bottom = 55.0
-custom_styles/panel = SubResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RestartMessage" type="Label" parent="Sprite/CanvasLayer/RestartPanel"]
-material = SubResource( 2 )
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -95.0551
-margin_top = -24.5812
-margin_right = 84.9449
-margin_bottom = 23.4188
-text = "On a long enough timeline
-Death takes us all
-R to show death what's what"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="debug" type="Label" parent="Sprite/CanvasLayer"]
 visible = false
@@ -150,3 +125,53 @@ smoothing_enabled = true
 smoothing_speed = 10.0
 offset_h = 1.0
 offset_v = 1.0
+
+[node name="RestartPanel" type="Panel" parent="."]
+margin_right = 200.0
+margin_bottom = 55.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RestartMessage" type="Label" parent="RestartPanel"]
+material = SubResource( 2 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -95.0551
+margin_top = -24.5812
+margin_right = 84.9449
+margin_bottom = 23.4188
+text = "On a long enough timeline
+Death takes us all
+R to show death what's what"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WinPanel" type="Panel" parent="."]
+margin_right = 200.0
+margin_bottom = 55.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WinMessage" type="Label" parent="WinPanel"]
+material = SubResource( 2 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -95.0551
+margin_top = -24.5812
+margin_right = 84.9449
+margin_bottom = 23.4188
+text = "You won,  nature is saved!
+R to play again
+Esc to exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
