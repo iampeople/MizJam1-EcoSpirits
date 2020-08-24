@@ -8,7 +8,9 @@ var drag = 0.5
 var facing_right = true
 onready var anim_player = $AnimationPlayer
 var dead = false
-
+var welcome=false
+var welcomeTimer=0
+var welcomeMax = 5
 
 
 #Bow and Arrow
@@ -26,6 +28,7 @@ func _ready():
 	get_tree().call_group("need_player_ref", "set_player", self)
 	$RestartPanel.hide()
 	$WinPanel.hide()
+	$WelcomePanel.hide()
 	$Sprite.scale = Vector2(1,1)
 	$Sprite.rotation = 0
 	$Sprite/Bow.hide()
@@ -42,16 +45,17 @@ func _physics_process(delta):
 				if fire_time > fire_rate:
 					fire_time = 0
 					fire()
-		else:
-			if Input.is_action_pressed("move_left"):
-				move_vec.x -= 1
-			if Input.is_action_pressed("move_right"):
-				move_vec.x += 1
-			if Input.is_action_pressed("move_down"):
-				move_vec.y += 1
-			if Input.is_action_pressed("move_up"):
-				move_vec.y -= 1
-				
+		#else:
+		if Input.is_action_pressed("move_left"):
+			move_vec.x -= 1
+		if Input.is_action_pressed("move_right"):
+			move_vec.x += 1
+		if Input.is_action_pressed("move_down"):
+			move_vec.y += 1
+		if Input.is_action_pressed("move_up"):
+			move_vec.y -= 1
+			
+			
 	velo += move_vec * move_speed - drag * velo
 	var _ignore=move_and_slide(velo, Vector2.UP)
 	
@@ -60,6 +64,8 @@ func _physics_process(delta):
 			_play_anim("idle")
 		else:
 			_play_anim("walk")
+			if welcome == true: 
+				closeWelcome(delta)
 		if have_bow == true:
 			$Sprite/Bow.show()
 	
@@ -100,10 +106,22 @@ func die():
 func give(loot):
 	if loot.name == "Bow":
 		have_bow = true
+		openWelcome()
 	
 	if loot.name == "Fire":
 		have_fire = true
 		win()
+	
+func openWelcome():
+	$WelcomePanel.show()
+	welcome=true
+	
+func closeWelcome(delta):
+	if welcomeTimer > welcomeMax:
+		$WelcomePanel.hide()
+		welcome=false
+	else:
+		welcomeTimer+=delta
 	
 	
 func win():

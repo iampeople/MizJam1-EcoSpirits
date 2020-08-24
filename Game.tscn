@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://MapTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Dozer.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Bow.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Blue Fire.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Game.gd" type="Script" id=6]
 
 [node name="Game" type="Node2D"]
+script = ExtResource( 6 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 336.709, 220.149 )
@@ -52,13 +54,13 @@ position = Vector2( 1389.9, 204.4 )
 position = Vector2( 1321.5, 349.75 )
 
 [node name="Dozer4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1096.35, 150.25 )
+position = Vector2( 1387.47, 299.891 )
 
 [node name="Dozer5" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1075.45, 240.5 )
+position = Vector2( 1393.78, 113.985 )
 
 [node name="Dozer6" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1267.35, 76.15 )
+position = Vector2( 1314.96, 73.4292 )
 
 [node name="Dozer7" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1865.85, 123.65 )
@@ -68,6 +70,9 @@ position = Vector2( 1932.35, 348.8 )
 
 [node name="Dozer9" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1760.4, 123.65 )
+
+[node name="Dozer10" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1467.92, 232.48 )
 
 [node name="Fire" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1312.04, 207.082 )

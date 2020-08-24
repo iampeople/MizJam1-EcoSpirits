@@ -4,10 +4,10 @@
 [ext_resource path="res://Player.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Bow.png" type="Texture" id=3]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.09485, 8.06731 )
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=2]
 resource_name = "dead"
 length = 9.0
 tracks/0/type = "value"
@@ -47,7 +47,7 @@ tracks/2/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=3]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -63,7 +63,7 @@ tracks/0/keys = {
 "values": [ 0, 4 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=4]
 length = 0.7
 loop = true
 tracks/0/type = "value"
@@ -79,10 +79,10 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 0 ]
 }
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.278431, 0.176471, 0.235294, 0.796078 )
 
-[sub_resource type="ShaderMaterial" id=2]
+[sub_resource type="ShaderMaterial" id=6]
 
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 4
@@ -109,12 +109,12 @@ texture = ExtResource( 3 )
 offset = Vector2( 5, 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/dead = SubResource( 4 )
-anims/idle = SubResource( 5 )
-anims/walk = SubResource( 6 )
+anims/dead = SubResource( 2 )
+anims/idle = SubResource( 3 )
+anims/walk = SubResource( 4 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( 20, 20 )
@@ -129,13 +129,13 @@ offset_v = 1.0
 [node name="RestartPanel" type="Panel" parent="."]
 margin_right = 200.0
 margin_bottom = 55.0
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="RestartMessage" type="Label" parent="RestartPanel"]
-material = SubResource( 2 )
+material = SubResource( 6 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -151,16 +151,42 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="WelcomePanel" type="Panel" parent="."]
+margin_left = -250.0
+margin_right = -50.0
+margin_bottom = 55.0
+custom_styles/panel = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WelcomeMessage" type="Label" parent="WelcomePanel"]
+material = SubResource( 6 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -95.0551
+margin_top = -24.5812
+margin_right = 84.9449
+margin_bottom = 23.4188
+text = "Terrible machines have taken
+over the forest.  The only hope
+left is to reach the blue flame."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="WinPanel" type="Panel" parent="."]
 margin_right = 200.0
 margin_bottom = 55.0
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="WinMessage" type="Label" parent="WinPanel"]
-material = SubResource( 2 )
+material = SubResource( 6 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
