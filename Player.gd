@@ -100,7 +100,7 @@ func die():
 	$AnimationPlayer.play("dead")
 	#$Sprite/CanvasLayer/RestartPanel.rect_position.x=to_local(global_position).x
 	#$Sprite/CanvasLayer/RestartPanel.rect_position.y=to_local(global_position).y
-	#yield($AnimationPlayer, 'animation_finished')
+	yield($AnimationPlayer, 'animation_finished')
 	$RestartPanel.show()
 	
 func give(loot):

@@ -89,9 +89,10 @@ collision_mask = 4
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
+rotation = 1.31224
+scale = Vector2( 0.791151, 0.791151 )
 texture = ExtResource( 1 )
 hframes = 6
-frame = 5
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Sprite"]
 
